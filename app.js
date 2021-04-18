@@ -5,6 +5,7 @@ const bodyParser = require("body-parser");
 const session = require("express-session");
 const flash = require("connect-flash");
 const moment = require("moment");
+const port = process.env.PORT || 9000;
 
 const seedDB = require("./seed");
 const removeUsers = require("./remove");
@@ -50,6 +51,6 @@ app.use(routes);
 // removeUsers();
 // seedDB();
 
-app.listen(9000, () => {
-  console.log("Server is up and running");
+app.listen(port, () => {
+  console.log("Server is up and running " + port);
 });
