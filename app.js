@@ -14,7 +14,7 @@ const routes = require("./routes/index");
 require('dotenv').config({ path: 'variables.env' });
 
 mongoose.Promise = global.Promise; //tell mongoose to use ES6 promises
-mongoose.connect(process.env.DATABASE, err => {
+mongoose.connect(process.env.MONGODB_URI, err => {
   if (err) {
     console.log("Cannot connect to database");
     console.log(err);
